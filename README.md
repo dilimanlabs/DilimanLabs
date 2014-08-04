@@ -1,2 +1,2 @@
-dilimantechnologylaboratoryinc
+Diliman Technology Laboratories Inc.
 ==============================

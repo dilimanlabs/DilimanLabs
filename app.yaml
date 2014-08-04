@@ -1,0 +1,35 @@
+application: diliman-tech-labs-inc
+version: 1
+runtime: python27
+threadsafe: true
+api_version: 1
+
+handlers:
+- url: /(.*\.css)
+  static_files: static/stylesheets/\1
+  upload: static/stylesheets/(.*\.css)
+
+- url: /(.*\.js)
+  static_files: static/scripts/\1
+  upload: static/scripts/(.*\.js)
+
+- url: /(.*\.(gif|png|jpg|ico))
+  static_files: static/images/\1
+  upload: static/images/(.*\.(gif|png|jpg|ico))
+
+# Endpoints handler
+- url: /_ah/spi/.*
+  script: Api.app
+
+- url: /.*
+  script: Main.app
+
+libraries:
+- name: jinja2
+  version: latest
+
+- name: webapp2
+  version: "2.5.2"
+
+- name: endpoints
+  version: 1.0
